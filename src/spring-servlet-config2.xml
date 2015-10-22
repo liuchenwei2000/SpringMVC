@@ -29,5 +29,6 @@
 	<!-- 处理器 -->
 	<bean class="annotations.UserController"/>
 	<bean class="annotations.TodayController"/>
+	<bean class="demo.controller.UserController"/>
 
 </beans>
