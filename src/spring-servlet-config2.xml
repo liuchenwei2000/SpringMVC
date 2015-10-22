@@ -10,6 +10,8 @@
     http://www.springframework.org/schema/mvc    
     http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	
+	<context:component-scan base-package="demo" />  
+	
 	<!-- 注解式处理器支持 -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
@@ -27,8 +29,7 @@
 	</bean>
 	
 	<!-- 处理器 -->
-	<bean class="annotations.UserController"/>
+	<!--<bean class="annotations.UserController"/>-->
 	<bean class="annotations.TodayController"/>
-	<bean class="demo.controller.UserController"/>
 
 </beans>
