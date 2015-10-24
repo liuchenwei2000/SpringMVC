@@ -15,9 +15,9 @@
 	<mvc:view-controller path="/" view-name="index"/>
 	
 	<!-- 默认扫描的包路径 -->  
-    <context:component-scan base-package="annotations" />  
-    <!-- 添加注解驱动 -->  
-    <mvc:annotation-driven />  
+    <context:component-scan base-package="annotations" /> 
+    <!-- 添加注解驱动，因为有了上面的自动扫描，所以本条配置可以省略 -->  
+    <!-- <mvc:annotation-driven /> -->  
 
 	<!-- InternalResourceViewResolver：用于支持Servlet、JSP视图解析。	-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
