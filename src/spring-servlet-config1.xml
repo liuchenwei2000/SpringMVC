@@ -11,9 +11,6 @@
     http://www.springframework.org/schema/mvc    
     http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	
-	<!-- 设置默认主页 -->
-	<mvc:view-controller path="/" view-name="index"/>
-	
 	<!-- 
 	BeanNameUrlHandlerMapping：表示将请求的URL和Bean名字进行映射。
 	如URL为 "上下文/hello"，则本配置文件必须有一个名字为"/hello"的Bean，上下文默认忽略。 

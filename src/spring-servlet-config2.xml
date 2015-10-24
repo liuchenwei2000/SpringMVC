@@ -12,8 +12,6 @@
     http://www.springframework.org/schema/mvc    
     http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	
-	<mvc:view-controller path="/" view-name="index"/>
-	
 	<!-- 默认扫描的包路径 -->  
     <context:component-scan base-package="annotations" /> 
     <!-- 添加注解驱动，因为有了上面的自动扫描，所以本条配置可以省略 -->  
