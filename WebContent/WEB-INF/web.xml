@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_2_5.xsd"
-	id="WebApp_ID" version="2.5">
-
-    <context-param>
-		<param-name>contextConfigLocation</param-name>
-		<!-- <param-value>classpath:applicationContext.xml</param-value> -->
-		<param-value>/WEB-INF/applicationContext-*.xml,classpath*:applicationContext-*.xml</param-value>
-	</context-param>
-
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
 
 	<!-- 
 	配置 SpringMVC 前端控制器，默认会加载 WEB-INF/dispatcher-servlet.xml 文件，也可以使用 init-param 指定加载的xml文件。
@@ -23,16 +13,18 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
             <param-name>contextConfigLocation</param-name>
-            <!-- 可以加载多个配置文件，用逗号隔开。classpath:spring-servlet-config1.xml,  -->
-            <param-value>classpath:spring-servlet-config2.xml</param-value>
+            <!-- 
+			可以加载多个配置文件，用逗号隔开。
+            -->
+            <param-value>classpath:spring-servlet-config1.xml,classpath:spring-servlet-config2.xml</param-value>
         </init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
+	<servlet-mapping>  
+		<servlet-name>dispatcher</servlet-name>  
+		<url-pattern>/</url-pattern>  
+	</servlet-mapping>  
 
 	<!-- 下面是POST中文乱码解决方案 -->
 	<filter>
