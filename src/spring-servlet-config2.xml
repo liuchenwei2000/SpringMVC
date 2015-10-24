@@ -14,9 +14,10 @@
 	
 	<mvc:view-controller path="/" view-name="index"/>
 	
-	<!-- 注解式处理器支持 -->
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
+	<!-- 默认扫描的包路径 -->  
+    <context:component-scan base-package="annotations" />  
+    <!-- 添加注解驱动 -->  
+    <mvc:annotation-driven />  
 
 	<!-- InternalResourceViewResolver：用于支持Servlet、JSP视图解析。	-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -29,9 +30,4 @@
     	<property name="prefix" value="/WEB-INF/views/"/>
     	<property name="suffix" value=".jsp"/>
 	</bean>
-	
-	<!-- 处理器 -->
-	<bean class="annotations.UserController"/>
-	<bean class="annotations.TodayController"/>
-
 </beans>
