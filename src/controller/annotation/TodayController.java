@@ -1,4 +1,4 @@
-package annotations;
+package controller.annotation;
 
 import java.util.Date;
 
@@ -17,9 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 // 或 @RequestMapping               
 public class TodayController {
 	
-	// 请求 URL 到处理器功能处理方法的映射  
-	@RequestMapping("/today")
-    public ModelAndView helloWorld() {
+	// 请求 URL 到处理器功能处理方法的映射，多个URL路径可以映射到同一个处理器的功能处理方法
+	@RequestMapping(value = { "/today", "/show/index" })
+    public ModelAndView show() {
 		// 1、收集参数、验证参数
 		// 2、绑定参数到命令对象
 		// 3、将命令对象传入业务对象进行业务处理

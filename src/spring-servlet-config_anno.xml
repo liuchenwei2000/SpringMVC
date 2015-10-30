@@ -13,7 +13,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	
 	<!-- 默认扫描的包路径 -->  
-    <context:component-scan base-package="annotations" /> 
+    <context:component-scan base-package="controller" /> 
     <!-- 添加注解驱动，因为有了上面的自动扫描，所以本条配置可以省略 -->  
     <!-- <mvc:annotation-driven /> -->  
 

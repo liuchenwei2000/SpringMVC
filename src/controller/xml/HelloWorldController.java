@@ -1,4 +1,4 @@
-package controller;
+package controller.xml;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,6 +7,8 @@ import org.springframework.web.servlet.mvc.Controller;
 
 /**
  * 页面控制器实现
+ * <p>
+ * Spring2.5 之前，都是通过实现 Controller 接口或其实现来定义控制器类。
  * 
  * @author 刘晨伟
  * 

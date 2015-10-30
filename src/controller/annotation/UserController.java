@@ -1,4 +1,4 @@
-package annotations;
+package controller.annotation;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
  * 
  * 创建日期：2015年5月19日
  */
-@Controller
-// 如果在类上使用 @RequestMapping 注解一般是用于窄化功能处理方法映射的
+@Controller // 推荐使用这种方式声明处理器，它和 @Service、@Repository 很好的对应了常见的三层开发架构的组件
+// 如果在类上使用 @RequestMapping 注解一般是用于窄化功能处理方法的映射的
 @RequestMapping("/user") // ① 处理器的通用映射前缀        
 public class UserController {
 	
