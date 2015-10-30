@@ -17,5 +17,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<a href="user/firstname">/user/firstname</a>
 	<p>
 	<a href="user/lastname">/user/lastname</a>
+	<p>
+	<a href="user/all">/user/all</a>
+	<p>
+	<a href="user?query=abcd">/user?query=aaa</a>
+	<p>
+	<a href="user/delete/pk123456">/user/delete/111</a>
 </body>
 </html>

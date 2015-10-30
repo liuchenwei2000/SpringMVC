@@ -13,8 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
  * 
  * 创建日期：2015年5月19日
  */
-@Controller // 将一个POJO类声明为 Controller  
-// 或 @RequestMapping               
+@Controller 
+// 或 @RequestMapping 将一个POJO类声明为 Controller  
+// 推荐使用 @Controller 声明处理器，它和 @Service、@Repository 很好的对应了常见的三层开发架构的组件
 public class TodayController {
 	
 	// 请求 URL 到处理器功能处理方法的映射，多个URL路径可以映射到同一个处理器的功能处理方法
@@ -26,9 +27,9 @@ public class TodayController {
 		// 4、选择下一个页面
 		ModelAndView mv = new ModelAndView();
 		// 添加模型数据，可以是任意的POJO。
-		mv.addObject("today", new Date());
+		mv.addObject("message", new Date());
 		// 设置逻辑视图名，视图解析器（ViewResolver）会根据该名字解析出具体的视图页面。
-		mv.setViewName("today");
+		mv.setViewName("show");
 		return mv;//  模型数据和逻辑视图名  
 	}
 }

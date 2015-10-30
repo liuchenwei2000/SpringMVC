@@ -3,8 +3,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Today</title>
+<title>Show Info</title>
 </head>
-<body>${firstname} ${lastname}
+<body>${message}
 </body>
 </html>
