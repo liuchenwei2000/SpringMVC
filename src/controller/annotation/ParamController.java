@@ -79,9 +79,11 @@ public class ParamController {
 	/** 单个请求参数值 */
 
 	// @RequestParam 用于将请求参数绑定到功能处理方法的参数上
-	// 若请求中包含 username 参数（如/single?username=abc），则自动传入。
+	// 若请求中包含 uname 参数（如/single?uname=abc），则将 uname 参数的值传给 usernam 参数。
+	// 在查询参数与方法参数的名字不匹配的时候，@RequestParam 是有用的。
+	// 基于约定，如果处理方法的所有参数没有使用注解的话，将绑定到同名的查询参数上。
 	@RequestMapping("/single")
-	public ModelAndView singleParam(@RequestParam String username) {
+	public ModelAndView singleParam(@RequestParam("uname") String username) {
 		ModelAndView mv = new ModelAndView("show");
 		mv.addObject("message", username);
 		return mv;

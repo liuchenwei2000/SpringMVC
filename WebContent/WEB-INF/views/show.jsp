@@ -6,5 +6,7 @@
 <title>Show Info</title>
 </head>
 <body>${message}
+<p><p>
+<a href="${baseurl}">Home Page</a>
 </body>
 </html>
