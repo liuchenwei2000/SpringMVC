@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.1">
 
 	<!-- 
-	配置 SpringMVC 前端控制器，默认会加载 WEB-INF/DispatcherServlet的Servlet名字-servlet.xml 配置文件（本例是 springmvc-servlet.xml）文件，也可以使用 init-param 指定加载的xml文件。
+	配置 SpringMVC 前端控制器，默认会加载 WEB-INF/DispatcherServlet的Servlet名字-servlet.xml 配置文件（本例应该是 dispatcher-servlet.xml）文件，也可以使用 init-param 指定加载的xml文件。
 	DispatcherServlet 是前端控制器模式的实现，提供Spring Web MVC的集中访问点，负责职责的分派，而且与Spring IoC容器无缝集成，可以获得Spring的所有好处。
 	-->
 	<servlet>
@@ -21,6 +21,11 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<!--  
+	通过将 DispatchServlet 映射到 / ，声明了它会作为默认的 servlet 并且会处理所有的请求，包括对静态资源的请求。
+	同时，可以在 spring-servlet-config_anno.xml 文件中使用 <mvc:resources> 元素来告诉 DispatchServlet 如何处理静态资源。
+	详见 springmvc-servlet.xml
+	-->
 	<servlet-mapping>  
 		<servlet-name>dispatcher</servlet-name>  
 		<url-pattern>/</url-pattern>  

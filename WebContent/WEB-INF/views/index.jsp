@@ -10,10 +10,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>Spring MVC demo.</title>
 </head>
 <body>
-	<p>
-		<a href="hello">/hello</a>
-	<p>
-		<a href="today">/today</a>
+	<img src="resources/image/cross.png">
+	<a href="hello">/hello</a>
+	<a href="today">/today</a>
 	<p>
 	<fieldset>
 		<legend>UserController</legend>
