@@ -40,6 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p>
 			<a href="params/commond?code=Bill&name=Gates">/params/commond</a>
 		<p>
+			<a href="params/model">/params/model</a>
+		<p>
 			<a href="params/single?uname=BillGates">/params/single</a>
 		<p>
 			<a href="params/single2?name=BillGates">/params/single2</a>

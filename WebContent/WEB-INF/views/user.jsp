@@ -6,8 +6,9 @@
 <title>Show Info</title>
 </head>
 <body>
-${message}
+Code:${user.code}
 <p>
+Name:${user.name}
 <p>
 <a href="${baseurl}">Home Page</a>
 </body>

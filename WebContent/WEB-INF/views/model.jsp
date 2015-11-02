@@ -6,8 +6,11 @@
 <title>Show Info</title>
 </head>
 <body>
-${message}
+${a}
 <p>
+${b}
+<p>
+${c}
 <p>
 <a href="${baseurl}">Home Page</a>
 </body>

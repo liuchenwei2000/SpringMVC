@@ -2,6 +2,7 @@ package controller.annotation;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -71,10 +74,24 @@ public class ParamController {
 	// 如果提交的表单包含 code 和 name 文本域 ，将自动将请求参数绑定到命令对象 user 中去。
 	@RequestMapping(value = "/commond", method = RequestMethod.GET)
 	public ModelAndView commond(User user) {
-		ModelAndView mv = new ModelAndView("show");
-		mv.addObject("message", user.getCode() + "-" + user.getName());
-		return mv;
+		return new ModelAndView("user");// 在 JSP 视图中也可以使用 user 对象渲染页面
 	}
+	
+	/***/
+	
+	// SpringMVC 提供 Model、Map 或 ModelMap 使得能暴露渲染视图需要的模型数据。
+	// 虽然此处注入的是三个不同的类型（Model model, Map model2, ModelMap model3），但三者是同一个对象。
+	@RequestMapping(value = "/model")
+	@SuppressWarnings("unchecked")
+	public ModelAndView model(Model model, Map model2, ModelMap model3) {
+		model.addAttribute("a", "A");
+		model2.put("b", "B");
+		model3.put("c", "C");
+		System.out.println(model == model2);
+		System.out.println(model2 == model3);
+		return new ModelAndView("model");
+	}
+
 
 	/** 单个请求参数值 */
 
