@@ -18,4 +18,9 @@ public class HomeController {
 	public ModelAndView index() {
 		return new ModelAndView("index");
 	}
+	
+	@RequestMapping(value = { "/restful" })
+	public ModelAndView restful() {
+		return new ModelAndView("restful");
+	}
 }

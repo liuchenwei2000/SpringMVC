@@ -13,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<img src="resources/image/cross.png">
 	<a href="hello">/hello</a>
 	<a href="today">/today</a>
+	<a href="restful">/restful</a>
 	<p>
 	<fieldset>
 		<legend>UserController</legend>
@@ -28,7 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<a href="user/delete/pk123456">/user/delete/111</a>
 		<p>
 	</fieldset>
-	<p>
 	<fieldset>
 		<legend>ParamController</legend>
 		<p>

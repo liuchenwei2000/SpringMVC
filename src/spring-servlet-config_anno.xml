@@ -23,9 +23,9 @@
           因此，所有图片、样式表、JavaScript以及其他的静态资源都必须放在应用程序的 /resources 目录下，如下：
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/img/**" location="/img/"/>
-    <mvc:resources mapping="/js/**" location="/js/"/>
     -->
     <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/js/**" location="/js/"/>
     <!-- 同时需要添加注解驱动 -->  
     <mvc:annotation-driven />
 
