@@ -18,6 +18,16 @@ public class User {
 	private String code;
 	private String name;
 
+	public User() {
+		super();
+	}
+
+	public User(String id, String code, String name) {
+		this.id = id;
+		this.code = code;
+		this.name = name;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -40,5 +50,10 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", code=" + code + ", name=" + name + "]";
 	}
 }
