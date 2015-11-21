@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Ò³Ãæ¿ØÖÆÆ÷ÊµÏÖ£¬Ê¹ÓÃ annotation
+ * é¡µé¢æ§åˆ¶å™¨å®ç°ï¼Œä½¿ç”¨ annotation
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê5ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´5æœˆ19æ—¥
  */
 @Controller 
-// Èç¹ûÔÚÀàÉÏÊ¹ÓÃ @RequestMapping ×¢½âÒ»°ãÊÇÓÃÓÚÕ­»¯¹¦ÄÜ´¦Àí·½·¨µÄÓ³ÉäµÄ
-@RequestMapping("/user") // ¢Ù ´¦ÀíÆ÷µÄÍ¨ÓÃÓ³ÉäÇ°×º        
+// å¦‚æœåœ¨ç±»ä¸Šä½¿ç”¨ @RequestMapping æ³¨è§£ä¸€èˆ¬æ˜¯ç”¨äºçª„åŒ–åŠŸèƒ½å¤„ç†æ–¹æ³•çš„æ˜ å°„çš„
+@RequestMapping("/user") // â‘  å¤„ç†å™¨çš„é€šç”¨æ˜ å°„å‰ç¼€        
 public class UserController {
 	
-	// Ïà¶ÔÓÚ¢Ù´¦µÄÓ³Éä½øĞĞÕ­»¯£¬¼´ÏìÓ¦ /user/firstname
+	// ç›¸å¯¹äºâ‘ å¤„çš„æ˜ å°„è¿›è¡Œçª„åŒ–ï¼Œå³å“åº” /user/firstname
 	@RequestMapping("/firstname")
 	public ModelAndView getFirstName() {
 		ModelAndView mv = new ModelAndView();
@@ -28,7 +28,7 @@ public class UserController {
 		return mv;
 	}
 
-	// ÏŞ¶¨Ö»´¦Àí GET ·½Ê½µÄÇëÇó
+	// é™å®šåªå¤„ç† GET æ–¹å¼çš„è¯·æ±‚
 	@RequestMapping(value = "/lastname", method = RequestMethod.GET)
 	public ModelAndView getLastName() {
 		ModelAndView mv = new ModelAndView();
@@ -37,7 +37,7 @@ public class UserController {
 		return mv;
 	}
 	
-	// ¼È¿ÉÒÔ´¦Àí POST ÓÖ¿ÉÒÔ´¦Àí GET ·½Ê½µÄÇëÇó
+	// æ—¢å¯ä»¥å¤„ç† POST åˆå¯ä»¥å¤„ç† GET æ–¹å¼çš„è¯·æ±‚
 	@RequestMapping(value = "/all", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView all() {
 		ModelAndView mv = new ModelAndView();
@@ -46,7 +46,7 @@ public class UserController {
 		return mv;
 	}
 	
-	// GET ÇëÇóÖĞÓĞ "query" ²ÎÊı¼´¿ÉÆ¥Åä£¬Èç "http://¡Á¡Á¡Á/user?query=a"
+	// GET è¯·æ±‚ä¸­æœ‰ "query" å‚æ•°å³å¯åŒ¹é…ï¼Œå¦‚ "http://Ã—Ã—Ã—/user?query=a"
 	@RequestMapping(params = "query", method = RequestMethod.GET)
 	public ModelAndView query(@RequestParam("query") String param) {
 		ModelAndView mv = new ModelAndView();
@@ -55,8 +55,8 @@ public class UserController {
 		return mv;
 	}
 
-	// URI Ä£°åÄ£Ê½Ó³Éä£º{userid} ÊÇÕ¼Î»·û£¬ ÇëÇóµÄ URL ¿ÉÒÔÊÇ "/delete/123456"»ò "/users/abcd"
-	// Í¨¹ı @PathVariable ¿ÉÒÔÌáÈ¡ URI Ä£°åÄ£Ê½ÖĞ {userid} µÄ userid ±äÁ¿Öµ¡£
+	// URI æ¨¡æ¿æ¨¡å¼æ˜ å°„ï¼š{userid} æ˜¯å ä½ç¬¦ï¼Œ è¯·æ±‚çš„ URL å¯ä»¥æ˜¯ "/delete/123456"æˆ– "/users/abcd"
+	// é€šè¿‡ @PathVariable å¯ä»¥æå– URI æ¨¡æ¿æ¨¡å¼ä¸­ {userid} çš„ userid å˜é‡å€¼ã€‚
 	@RequestMapping("/delete/{userid}")
 	public ModelAndView deleteUser(@PathVariable String userid) {
 		ModelAndView mv = new ModelAndView();

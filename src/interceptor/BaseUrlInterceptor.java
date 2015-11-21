@@ -13,9 +13,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * <p>
  * 
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê11ÔÂ1ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´11æœˆ1æ—¥
  */
 public class BaseUrlInterceptor extends HandlerInterceptorAdapter {
 

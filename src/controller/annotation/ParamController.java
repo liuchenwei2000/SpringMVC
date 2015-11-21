@@ -25,21 +25,21 @@ import org.springframework.web.servlet.ModelAndView;
 import vo.User;
 
 /**
- * ¹¦ÄÜ´¦Àí·½·¨Ö§³ÖµÄ²ÎÊıÀàĞÍÊ¾Àı
+ * åŠŸèƒ½å¤„ç†æ–¹æ³•æ”¯æŒçš„å‚æ•°ç±»å‹ç¤ºä¾‹
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê10ÔÂ31ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´10æœˆ31æ—¥
  */
 @Controller 
 @RequestMapping("/params")
 public class ParamController {
 	
 	/**
-	 * ServletRequest/HttpServletRequest ºÍ ServletResponse/HttpServletResponse
+	 * ServletRequest/HttpServletRequest å’Œ ServletResponse/HttpServletResponse
 	 */
 
-	// SpringMVC »á×Ô¶¯°ÑÏàÓ¦µÄÇëÇó/ÏìÓ¦£¨Servlet API£©×÷Îª²ÎÊı´«µİ½øÀ´
+	// SpringMVC ä¼šè‡ªåŠ¨æŠŠç›¸åº”çš„è¯·æ±‚/å“åº”ï¼ˆServlet APIï¼‰ä½œä¸ºå‚æ•°ä¼ é€’è¿›æ¥
 	@RequestMapping("/request")
 	public ModelAndView request(ServletRequest request, HttpServletRequest httpRequest) {
 		String path = httpRequest.getContextPath();
@@ -49,7 +49,7 @@ public class ParamController {
 		return mv;
 	}
 
-	// SpringMVC »á×Ô¶¯°ÑÏàÓ¦µÄÇëÇó/ÏìÓ¦£¨Servlet API£©×÷Îª²ÎÊı´«µİ½øÀ´
+	// SpringMVC ä¼šè‡ªåŠ¨æŠŠç›¸åº”çš„è¯·æ±‚/å“åº”ï¼ˆServlet APIï¼‰ä½œä¸ºå‚æ•°ä¼ é€’è¿›æ¥
 	@RequestMapping("/response")
 	public ModelAndView response(ServletResponse response, HttpServletResponse httpResponse) {
 		String message = response.getCharacterEncoding() + "</br>" + httpResponse.getContentType();
@@ -60,27 +60,27 @@ public class ParamController {
 
 	/** HttpSession */
 
-	// SpringMVC »á×Ô¶¯°ÑÏàÓ¦µÄ session ¶ÔÏó×÷Îª²ÎÊı´«µİ½øÀ´
+	// SpringMVC ä¼šè‡ªåŠ¨æŠŠç›¸åº”çš„ session å¯¹è±¡ä½œä¸ºå‚æ•°ä¼ é€’è¿›æ¥
 	@RequestMapping("/session")
-	public ModelAndView session(HttpSession session) {// ´Ë´¦µÄ session ÓÀÔ¶²»Îª null
+	public ModelAndView session(HttpSession session) {// æ­¤å¤„çš„ session æ°¸è¿œä¸ä¸º null
 		ModelAndView mv = new ModelAndView("show");
 		mv.addObject("message", session.getId());
 		return mv;
 	}
 
-	/** ÃüÁî/±íµ¥¶ÔÏó */
+	/** å‘½ä»¤/è¡¨å•å¯¹è±¡ */
 
-	// SpringMVC »á×Ô¶¯½«ÇëÇó²ÎÊı°ó¶¨µ½¹¦ÄÜ´¦Àí·½·¨µÄ ÃüÁî/±íµ¥ ¶ÔÏóÉÏ
-	// Èç¹ûÌá½»µÄ±íµ¥°üº¬ code ºÍ name ÎÄ±¾Óò £¬½«×Ô¶¯½«ÇëÇó²ÎÊı°ó¶¨µ½ÃüÁî¶ÔÏó user ÖĞÈ¥¡£
+	// SpringMVC ä¼šè‡ªåŠ¨å°†è¯·æ±‚å‚æ•°ç»‘å®šåˆ°åŠŸèƒ½å¤„ç†æ–¹æ³•çš„ å‘½ä»¤/è¡¨å• å¯¹è±¡ä¸Š
+	// å¦‚æœæäº¤çš„è¡¨å•åŒ…å« code å’Œ name æ–‡æœ¬åŸŸ ï¼Œå°†è‡ªåŠ¨å°†è¯·æ±‚å‚æ•°ç»‘å®šåˆ°å‘½ä»¤å¯¹è±¡ user ä¸­å»ã€‚
 	@RequestMapping(value = "/commond", method = RequestMethod.GET)
 	public ModelAndView commond(User user) {
-		return new ModelAndView("user");// ÔÚ JSP ÊÓÍ¼ÖĞÒ²¿ÉÒÔÊ¹ÓÃ user ¶ÔÏóäÖÈ¾Ò³Ãæ
+		return new ModelAndView("user");// åœ¨ JSP è§†å›¾ä¸­ä¹Ÿå¯ä»¥ä½¿ç”¨ user å¯¹è±¡æ¸²æŸ“é¡µé¢
 	}
 	
 	/***/
 	
-	// SpringMVC Ìá¹© Model¡¢Map »ò ModelMap Ê¹µÃÄÜ±©Â¶äÖÈ¾ÊÓÍ¼ĞèÒªµÄÄ£ĞÍÊı¾İ¡£
-	// ËäÈ»´Ë´¦×¢ÈëµÄÊÇÈı¸ö²»Í¬µÄÀàĞÍ£¨Model model, Map model2, ModelMap model3£©£¬µ«ÈıÕßÊÇÍ¬Ò»¸ö¶ÔÏó¡£
+	// SpringMVC æä¾› Modelã€Map æˆ– ModelMap ä½¿å¾—èƒ½æš´éœ²æ¸²æŸ“è§†å›¾éœ€è¦çš„æ¨¡å‹æ•°æ®ã€‚
+	// è™½ç„¶æ­¤å¤„æ³¨å…¥çš„æ˜¯ä¸‰ä¸ªä¸åŒçš„ç±»å‹ï¼ˆModel model, Map model2, ModelMap model3ï¼‰ï¼Œä½†ä¸‰è€…æ˜¯åŒä¸€ä¸ªå¯¹è±¡ã€‚
 	@RequestMapping(value = "/model")
 	@SuppressWarnings("unchecked")
 	public ModelAndView model(Model model, Map model2, ModelMap model3) {
@@ -93,12 +93,12 @@ public class ParamController {
 	}
 
 
-	/** µ¥¸öÇëÇó²ÎÊıÖµ */
+	/** å•ä¸ªè¯·æ±‚å‚æ•°å€¼ */
 
-	// @RequestParam ÓÃÓÚ½«ÇëÇó²ÎÊı°ó¶¨µ½¹¦ÄÜ´¦Àí·½·¨µÄ²ÎÊıÉÏ
-	// ÈôÇëÇóÖĞ°üº¬ uname ²ÎÊı£¨Èç/single?uname=abc£©£¬Ôò½« uname ²ÎÊıµÄÖµ´«¸ø usernam ²ÎÊı¡£
-	// ÔÚ²éÑ¯²ÎÊıÓë·½·¨²ÎÊıµÄÃû×Ö²»Æ¥ÅäµÄÊ±ºò£¬@RequestParam ÊÇÓĞÓÃµÄ¡£
-	// »ùÓÚÔ¼¶¨£¬Èç¹û´¦Àí·½·¨µÄËùÓĞ²ÎÊıÃ»ÓĞÊ¹ÓÃ×¢½âµÄ»°£¬½«°ó¶¨µ½Í¬ÃûµÄ²éÑ¯²ÎÊıÉÏ¡£
+	// @RequestParam ç”¨äºå°†è¯·æ±‚å‚æ•°ç»‘å®šåˆ°åŠŸèƒ½å¤„ç†æ–¹æ³•çš„å‚æ•°ä¸Š
+	// è‹¥è¯·æ±‚ä¸­åŒ…å« uname å‚æ•°ï¼ˆå¦‚/single?uname=abcï¼‰ï¼Œåˆ™å°† uname å‚æ•°çš„å€¼ä¼ ç»™ usernam å‚æ•°ã€‚
+	// åœ¨æŸ¥è¯¢å‚æ•°ä¸æ–¹æ³•å‚æ•°çš„åå­—ä¸åŒ¹é…çš„æ—¶å€™ï¼Œ@RequestParam æ˜¯æœ‰ç”¨çš„ã€‚
+	// åŸºäºçº¦å®šï¼Œå¦‚æœå¤„ç†æ–¹æ³•çš„æ‰€æœ‰å‚æ•°æ²¡æœ‰ä½¿ç”¨æ³¨è§£çš„è¯ï¼Œå°†ç»‘å®šåˆ°åŒåçš„æŸ¥è¯¢å‚æ•°ä¸Šã€‚
 	@RequestMapping("/single")
 	public ModelAndView singleParam(@RequestParam("uname") String username) {
 		ModelAndView mv = new ModelAndView("show");
@@ -106,10 +106,10 @@ public class ParamController {
 		return mv;
 	}
 
-	// Í¨¹ı @RequestParam("name") Ã÷È·¸æËß SpringMVC Ê¹ÓÃ name ½øĞĞÈë²Î¡£¸÷²ÎÊıËµÃ÷ÈçÏÂ£º
-	// value£º²ÎÊıÃû×Ö£¬¼´Èë²ÎµÄÇëÇó²ÎÊıÃû×Ö£¬Èç name ±íÊ¾ÇëÇó²ÎÊıÖĞÃû×ÖÎª name µÄ²ÎÊıÖµ½«´«Èë¡£
-	// required£ºÊÇ·ñ±ØĞë£¬Ä¬ÈÏÊÇ true£¬±íÊ¾ÇëÇóÖĞÒ»¶¨ÒªÓĞÏàÓ¦µÄ²ÎÊı£¬·ñÔò½«±¨ 404 ´íÎó¡£
-	// defaultValue£º Ä¬ÈÏÖµ£¬±íÊ¾Èç¹ûÇëÇóÖĞÃ»ÓĞÍ¬Ãû²ÎÊıÊ±µÄÄ¬ÈÏÖµ£¬Ä¬ÈÏÖµ¿ÉÒÔÊÇ SpEL ±í´ïÊ½¡£
+	// é€šè¿‡ @RequestParam("name") æ˜ç¡®å‘Šè¯‰ SpringMVC ä½¿ç”¨ name è¿›è¡Œå…¥å‚ã€‚å„å‚æ•°è¯´æ˜å¦‚ä¸‹ï¼š
+	// valueï¼šå‚æ•°åå­—ï¼Œå³å…¥å‚çš„è¯·æ±‚å‚æ•°åå­—ï¼Œå¦‚ name è¡¨ç¤ºè¯·æ±‚å‚æ•°ä¸­åå­—ä¸º name çš„å‚æ•°å€¼å°†ä¼ å…¥ã€‚
+	// requiredï¼šæ˜¯å¦å¿…é¡»ï¼Œé»˜è®¤æ˜¯ trueï¼Œè¡¨ç¤ºè¯·æ±‚ä¸­ä¸€å®šè¦æœ‰ç›¸åº”çš„å‚æ•°ï¼Œå¦åˆ™å°†æŠ¥ 404 é”™è¯¯ã€‚
+	// defaultValueï¼š é»˜è®¤å€¼ï¼Œè¡¨ç¤ºå¦‚æœè¯·æ±‚ä¸­æ²¡æœ‰åŒåå‚æ•°æ—¶çš„é»˜è®¤å€¼ï¼Œé»˜è®¤å€¼å¯ä»¥æ˜¯ SpEL è¡¨è¾¾å¼ã€‚
 	@RequestMapping("/single2")
 	public ModelAndView singleParam2(
 			@RequestParam(value = "name", required = false, defaultValue = "default name") String username) {
@@ -118,7 +118,7 @@ public class ParamController {
 		return mv;
 	}
 
-	// Èç¹ûÇëÇóÖĞÓĞ¶à¸öÍ¬ÃûµÄ²ÎÊı£¨Èç/multi?role=admin&role=manager£©£¬¿ÉÒÔÊ¹ÓÃÈçÏÂ·½Ê½À´½ÓÊÕ¶à¸öÇëÇó²ÎÊı¡£
+	// å¦‚æœè¯·æ±‚ä¸­æœ‰å¤šä¸ªåŒåçš„å‚æ•°ï¼ˆå¦‚/multi?role=admin&role=managerï¼‰ï¼Œå¯ä»¥ä½¿ç”¨å¦‚ä¸‹æ–¹å¼æ¥æ¥æ”¶å¤šä¸ªè¯·æ±‚å‚æ•°ã€‚
 	@RequestMapping("/multi")
 	public ModelAndView multiParam(@RequestParam("role") String[] roles) {
 		ModelAndView mv = new ModelAndView("show");
@@ -133,10 +133,10 @@ public class ParamController {
 		return mv;
 	}
 	
-	/** °ó¶¨ URI Ä£°å±äÁ¿Öµ */
+	/** ç»‘å®š URI æ¨¡æ¿å˜é‡å€¼ */
 	
-	// @PathVariable ÓÃÓÚ½«ÇëÇó URL ÖĞµÄÄ£°å±äÁ¿°ó¶¨µ½¹¦ÄÜ´¦Àí·½·¨µÄ²ÎÊıÉÏ¡£
-	// ÈçÇëÇóµÄ URL Îª "/load/12345¡±£¬Ôò×Ô¶¯½« URL ÖĞÄ£°å±äÁ¿ {userId} µÄÖµ°ó¶¨µ½Í¨¹ı @PathVariable ×¢½âµÄÍ¬Ãû²ÎÊıÉÏ¡£
+	// @PathVariable ç”¨äºå°†è¯·æ±‚ URL ä¸­çš„æ¨¡æ¿å˜é‡ç»‘å®šåˆ°åŠŸèƒ½å¤„ç†æ–¹æ³•çš„å‚æ•°ä¸Šã€‚
+	// å¦‚è¯·æ±‚çš„ URL ä¸º "/load/12345â€ï¼Œåˆ™è‡ªåŠ¨å°† URL ä¸­æ¨¡æ¿å˜é‡ {userId} çš„å€¼ç»‘å®šåˆ°é€šè¿‡ @PathVariable æ³¨è§£çš„åŒåå‚æ•°ä¸Šã€‚
 	@RequestMapping("/load/{userid}")
 	public ModelAndView load(@PathVariable String userid) {
 		ModelAndView mv = new ModelAndView("show");
@@ -144,10 +144,10 @@ public class ParamController {
 		return mv;
 	}
 	
-	/** °ó¶¨ Cookie Êı¾İÖµ */
+	/** ç»‘å®š Cookie æ•°æ®å€¼ */
 	
-	// @CookieValue ÓÃÓÚ½«ÇëÇóµÄ Cookie Êı¾İ°ó¶¨µ½¹¦ÄÜ´¦Àí·½·¨µÄ²ÎÊıÉÏ¡£
-	// ÏÂÃæµÄÅäÖÃ½«×Ô¶¯½« JSESSIONID Öµ´«¸ø sessionId ²ÎÊı£¬defaultValue ±íÊ¾ Cookie ÖĞÃ»ÓĞ JSESSIONID Ê±Ä¬ÈÏÎª¿Õ¡£
+	// @CookieValue ç”¨äºå°†è¯·æ±‚çš„ Cookie æ•°æ®ç»‘å®šåˆ°åŠŸèƒ½å¤„ç†æ–¹æ³•çš„å‚æ•°ä¸Šã€‚
+	// ä¸‹é¢çš„é…ç½®å°†è‡ªåŠ¨å°† JSESSIONID å€¼ä¼ ç»™ sessionId å‚æ•°ï¼ŒdefaultValue è¡¨ç¤º Cookie ä¸­æ²¡æœ‰ JSESSIONID æ—¶é»˜è®¤ä¸ºç©ºã€‚
 	@RequestMapping("/cookie")
 	public ModelAndView cookie(@CookieValue(value="JSESSIONID", defaultValue="") String sessionId) {
 		ModelAndView mv = new ModelAndView("show");
@@ -155,7 +155,7 @@ public class ParamController {
 		return mv;
 	}
 	
-	// ´«Èë²ÎÊıÀàĞÍÒ²¿ÉÒÔÊÇ javax.servlet.http.Cookie ÀàĞÍ¡£
+	// ä¼ å…¥å‚æ•°ç±»å‹ä¹Ÿå¯ä»¥æ˜¯ javax.servlet.http.Cookie ç±»å‹ã€‚
 	@RequestMapping("/cookie2")
 	public ModelAndView cookie(@CookieValue(value = "JSESSIONID", defaultValue = "") Cookie cookie) {
 		ModelAndView mv = new ModelAndView("show");
@@ -163,10 +163,10 @@ public class ParamController {
 		return mv;
 	}
 	
-	/** °ó¶¨ÇëÇóÍ·Êı¾İ */
+	/** ç»‘å®šè¯·æ±‚å¤´æ•°æ® */
 	
-	// @RequestHeader ÓÃÓÚ½«ÇëÇóµÄÍ·ĞÅÏ¢Êı¾İ°ó¶¨µ½¹¦ÄÜ´¦Àí·½·¨µÄ²ÎÊıÉÏ¡£
-	// ÏÂÃæµÄÅäÖÃ½«×Ô¶¯½«ÇëÇóÍ·"User-Agent"µÄÖµ´«¸ø userAgent ²ÎÊı£¬²¢½«"Accept"ÇëÇóÍ·Öµ´«¸ø accepts ²ÎÊı¡£
+	// @RequestHeader ç”¨äºå°†è¯·æ±‚çš„å¤´ä¿¡æ¯æ•°æ®ç»‘å®šåˆ°åŠŸèƒ½å¤„ç†æ–¹æ³•çš„å‚æ•°ä¸Šã€‚
+	// ä¸‹é¢çš„é…ç½®å°†è‡ªåŠ¨å°†è¯·æ±‚å¤´"User-Agent"çš„å€¼ä¼ ç»™ userAgent å‚æ•°ï¼Œå¹¶å°†"Accept"è¯·æ±‚å¤´å€¼ä¼ ç»™ accepts å‚æ•°ã€‚
 	@RequestMapping("/header")
 	public ModelAndView requestHeader(@RequestHeader("User-Agent") String userAgent,
 			@RequestHeader(value="Accept") String[] accepts) {

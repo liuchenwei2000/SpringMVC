@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import vo.User;
 
 /**
- * ´¦Àí/·µ»Ø JSON µÄ¿ØÖÆÆ÷Ê¾Àı
+ * å¤„ç†/è¿”å› JSON çš„æ§åˆ¶å™¨ç¤ºä¾‹
  * <p>
- * ä¯ÀÀÆ÷·ÃÎÊ±¨£º
+ * æµè§ˆå™¨è®¿é—®æŠ¥ï¼š
  * the resource identified by this request is only capable of generating responses 
  * with characteristics not acceptable according to the request "accept" headers.
  * 
- * ĞèÒªÌí¼Ó£ºjackson-core-2.4.1¡¢jackson-databind-2.4.1.1¡¢jackson-annotations-2.4.0
+ * éœ€è¦æ·»åŠ ï¼šjackson-core-2.4.1ã€jackson-databind-2.4.1.1ã€jackson-annotations-2.4.0
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê5ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´5æœˆ19æ—¥
  */
 @Controller 
 @RequestMapping("/api")

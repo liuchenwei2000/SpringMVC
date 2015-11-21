@@ -10,11 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import vo.Book;
 
 /**
- * RESTfull ·ç¸ñµÄ Controller
+ * RESTfull é£Žæ ¼çš„ Controller
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê5ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´5æœˆ19æ—¥
  */
 @Controller 
 @RequestMapping("/book") 

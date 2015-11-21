@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Ê×Ò³Ò³Ãæ¿ØÖÆÆ÷
+ * é¦–é¡µé¡µé¢æ§åˆ¶å™¨
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê11ÔÂ1ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´11æœˆ1æ—¥
  */
 @Controller 
 public class HomeController {

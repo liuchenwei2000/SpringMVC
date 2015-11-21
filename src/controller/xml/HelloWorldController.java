@@ -6,26 +6,26 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 /**
- * Ò³Ãæ¿ØÖÆÆ÷ÊµÏÖ
+ * é¡µé¢æŽ§åˆ¶å™¨å®žçŽ°
  * <p>
- * Spring2.5 Ö®Ç°£¬¶¼ÊÇÍ¨¹ýÊµÏÖ Controller ½Ó¿Ú»òÆäÊµÏÖÀ´¶¨Òå¿ØÖÆÆ÷Àà¡£
+ * Spring2.5 ä¹‹å‰ï¼Œéƒ½æ˜¯é€šè¿‡å®žçŽ° Controller æŽ¥å£æˆ–å…¶å®žçŽ°æ¥å®šä¹‰æŽ§åˆ¶å™¨ç±»ã€‚
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê5ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´5æœˆ19æ—¥
  */
 public class HelloWorldController implements Controller {
 	
     @Override
     public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		// 1¡¢ÊÕ¼¯²ÎÊý¡¢ÑéÖ¤²ÎÊý
-		// 2¡¢°ó¶¨²ÎÊýµ½ÃüÁî¶ÔÏó
-		// 3¡¢½«ÃüÁî¶ÔÏó´«ÈëÒµÎñ¶ÔÏó½øÐÐÒµÎñ´¦Àí
-		// 4¡¢Ñ¡ÔñÏÂÒ»¸öÒ³Ãæ
+		// 1ã€æ”¶é›†å‚æ•°ã€éªŒè¯å‚æ•°
+		// 2ã€ç»‘å®šå‚æ•°åˆ°å‘½ä»¤å¯¹è±¡
+		// 3ã€å°†å‘½ä»¤å¯¹è±¡ä¼ å…¥ä¸šåŠ¡å¯¹è±¡è¿›è¡Œä¸šåŠ¡å¤„ç†
+		// 4ã€é€‰æ‹©ä¸‹ä¸€ä¸ªé¡µé¢
 		ModelAndView mv = new ModelAndView();
-		// Ìí¼ÓÄ£ÐÍÊý¾Ý£¬¿ÉÒÔÊÇÈÎÒâµÄPOJO¡£
+		// æ·»åŠ æ¨¡åž‹æ•°æ®ï¼Œå¯ä»¥æ˜¯ä»»æ„çš„POJOã€‚
 		mv.addObject("message", "Hello World!");
-		// ÉèÖÃÂß¼­ÊÓÍ¼Ãû£¬ÊÓÍ¼½âÎöÆ÷£¨ViewResolver£©»á¸ù¾Ý¸ÃÃû×Ö½âÎö³ö¾ßÌåµÄÊÓÍ¼Ò³Ãæ¡£
+		// è®¾ç½®é€»è¾‘è§†å›¾åï¼Œè§†å›¾è§£æžå™¨ï¼ˆViewResolverï¼‰ä¼šæ ¹æ®è¯¥åå­—è§£æžå‡ºå…·ä½“çš„è§†å›¾é¡µé¢ã€‚
 		mv.setViewName("hello");
 		return mv;
 	}

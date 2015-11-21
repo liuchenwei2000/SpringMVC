@@ -7,29 +7,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Ò³Ãæ¿ØÖÆÆ÷ÊµÏÖ£¬Ê¹ÓÃ annotation
+ * é¡µé¢æŽ§åˆ¶å™¨å®žçŽ°ï¼Œä½¿ç”¨ annotation
  * 
- * @author Áõ³¿Î°
+ * @author åˆ˜æ™¨ä¼Ÿ
  * 
- * ´´½¨ÈÕÆÚ£º2015Äê5ÔÂ19ÈÕ
+ * åˆ›å»ºæ—¥æœŸï¼š2015å¹´5æœˆ19æ—¥
  */
 @Controller 
-// »ò @RequestMapping ½«Ò»¸öPOJOÀàÉùÃ÷Îª Controller  
-// ÍÆ¼öÊ¹ÓÃ @Controller ÉùÃ÷´¦ÀíÆ÷£¬ËüºÍ @Service¡¢@Repository ºÜºÃµÄ¶ÔÓ¦ÁË³£¼ûµÄÈý²ã¿ª·¢¼Ü¹¹µÄ×é¼þ
+// æˆ– @RequestMapping å°†ä¸€ä¸ªPOJOç±»å£°æ˜Žä¸º Controller  
+// æŽ¨èä½¿ç”¨ @Controller å£°æ˜Žå¤„ç†å™¨ï¼Œå®ƒå’Œ @Serviceã€@Repository å¾ˆå¥½çš„å¯¹åº”äº†å¸¸è§çš„ä¸‰å±‚å¼€å‘æž¶æž„çš„ç»„ä»¶
 public class TodayController {
 	
-	// ÇëÇó URL µ½´¦ÀíÆ÷¹¦ÄÜ´¦Àí·½·¨µÄÓ³Éä£¬¶à¸öURLÂ·¾¶¿ÉÒÔÓ³Éäµ½Í¬Ò»¸ö´¦ÀíÆ÷µÄ¹¦ÄÜ´¦Àí·½·¨
+	// è¯·æ±‚ URL åˆ°å¤„ç†å™¨åŠŸèƒ½å¤„ç†æ–¹æ³•çš„æ˜ å°„ï¼Œå¤šä¸ªURLè·¯å¾„å¯ä»¥æ˜ å°„åˆ°åŒä¸€ä¸ªå¤„ç†å™¨çš„åŠŸèƒ½å¤„ç†æ–¹æ³•
 	@RequestMapping(value = { "/today", "/show/index" })
     public ModelAndView show() {
-		// 1¡¢ÊÕ¼¯²ÎÊý¡¢ÑéÖ¤²ÎÊý
-		// 2¡¢°ó¶¨²ÎÊýµ½ÃüÁî¶ÔÏó
-		// 3¡¢½«ÃüÁî¶ÔÏó´«ÈëÒµÎñ¶ÔÏó½øÐÐÒµÎñ´¦Àí
-		// 4¡¢Ñ¡ÔñÏÂÒ»¸öÒ³Ãæ
+		// 1ã€æ”¶é›†å‚æ•°ã€éªŒè¯å‚æ•°
+		// 2ã€ç»‘å®šå‚æ•°åˆ°å‘½ä»¤å¯¹è±¡
+		// 3ã€å°†å‘½ä»¤å¯¹è±¡ä¼ å…¥ä¸šåŠ¡å¯¹è±¡è¿›è¡Œä¸šåŠ¡å¤„ç†
+		// 4ã€é€‰æ‹©ä¸‹ä¸€ä¸ªé¡µé¢
 		ModelAndView mv = new ModelAndView();
-		// Ìí¼ÓÄ£ÐÍÊý¾Ý£¬¿ÉÒÔÊÇÈÎÒâµÄPOJO¡£
+		// æ·»åŠ æ¨¡åž‹æ•°æ®ï¼Œå¯ä»¥æ˜¯ä»»æ„çš„POJOã€‚
 		mv.addObject("message", new Date());
-		// ÉèÖÃÂß¼­ÊÓÍ¼Ãû£¬ÊÓÍ¼½âÎöÆ÷£¨ViewResolver£©»á¸ù¾Ý¸ÃÃû×Ö½âÎö³ö¾ßÌåµÄÊÓÍ¼Ò³Ãæ¡£
+		// è®¾ç½®é€»è¾‘è§†å›¾åï¼Œè§†å›¾è§£æžå™¨ï¼ˆViewResolverï¼‰ä¼šæ ¹æ®è¯¥åå­—è§£æžå‡ºå…·ä½“çš„è§†å›¾é¡µé¢ã€‚
 		mv.setViewName("show");
-		return mv;//  Ä£ÐÍÊý¾ÝºÍÂß¼­ÊÓÍ¼Ãû  
+		return mv;//  æ¨¡åž‹æ•°æ®å’Œé€»è¾‘è§†å›¾å  
 	}
 }
