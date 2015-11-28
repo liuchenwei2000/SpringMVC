@@ -34,7 +34,7 @@
 </script>
 </head>
 <body>
-	<img src="resources/image/cross.png">
+	<img src="resources/image/cross.jpg">
 	<a href="hello">/hello</a>
 	<a href="today">/today</a>
 	<a href="restful">/restful</a>
