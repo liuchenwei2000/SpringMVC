@@ -16,7 +16,7 @@
             <!-- 
 			可以加载多个配置文件，用逗号隔开。
             -->
-			<param-value>classpath:spring-servlet-config_anno.xml</param-value>
+			<param-value>classpath:conf/spring-servlet-config_anno.xml</param-value>
         </init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
