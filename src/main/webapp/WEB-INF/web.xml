@@ -5,8 +5,11 @@
 	id="WebApp_ID" version="3.1">
 
 	<!-- 
-	配置 SpringMVC 前端控制器，默认会加载 WEB-INF/DispatcherServlet的Servlet名字-servlet.xml 配置文件（本例应该是 dispatcher-servlet.xml）文件，也可以使用 init-param 指定加载的xml文件。
-	DispatcherServlet 是前端控制器模式的实现，提供Spring Web MVC的集中访问点，负责职责的分派，而且与Spring IoC容器无缝集成，可以获得Spring的所有好处。
+	配置 SpringMVC 前端控制器，默认会加载 WEB-INF/<servlet-name>-servlet.xml 配置文件
+	（本例应该是 dispatcher-servlet.xml）文件，也可以使用 init-param 指定加载的 XML 文件。
+
+	DispatcherServlet 是前端控制器模式的实现，提供 Spring Web MVC 的集中访问点，
+	负责职责的分派，而且与 Spring IoC 容器无缝集成，可以获得 Spring 的所有好处。
 	-->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
@@ -24,14 +27,48 @@
 	<!--  
 	通过将 DispatchServlet 映射到 / ，声明了它会作为默认的 servlet 并且会处理所有的请求，包括对静态资源的请求。
 	同时，可以在 spring-servlet-config_anno.xml 文件中使用 <mvc:resources> 元素来告诉 DispatchServlet 如何处理静态资源。
-	详见 springmvc-servlet.xml
+	详见 spring-servlet-config_anno.xml。
 	-->
 	<servlet-mapping>  
 		<servlet-name>dispatcher</servlet-name>  
 		<url-pattern>/</url-pattern>  
-	</servlet-mapping>  
+	</servlet-mapping>
 
-	<!-- 下面是POST中文乱码解决方案 -->
+    <!--
+    如上所述，DispatcherServlet 会根据一个 XML 文件来加载其 Spring 应用上下文，
+    而这个文件的名字是基于它的 <servlet-name> 属性来确定。
+    但如果还有其他 Spring 的配置文件（及其内定义的 Bean）该怎么办？
+    是否需要将这些 Bean 也声明在 DispatcherServlet 的 XML 文件中？
+
+    尽管不是严格要求，但是将 Spring 配置文件组织到多个文件中是最佳实践。
+    比如一个用于服务层，一个用于持久层还有一个用于数据源配置。
+    基于这样的理念，将 Web 层的配置都放在 DispatcherServlet 的配置文件中，
+    这个文件会被 DispatcherServlet 加载，但是还需要一种方式来加载其他的配置文件。
+
+    ContextLoaderListener 就是这样一种方式，它是一个 Servlet 监听器。
+    除了 DispatcherServlet 创建的应用上下文外，它能够加载其他的配置文件到一个 Spring 应用上下文中。
+
+    为此，需要像下面一样声明 ContextLoaderListener。
+    -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--
+    另外，必须告诉 ContextLoaderListener 需要加载哪些配置文件。
+    如果没有指定，默认会加载 WEB-INF/applicationContext.xml 文件。
+    为了指定一个或多个 Spring 配置文件，需要在 servlet 上下文中配置 contextConfigLocation 参数。
+    -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <!-- contextConfigLocation 指定了一个路径的列表，除非特殊声明，路径是相对于应用程序根目录的。 -->
+        <param-value>
+            /WEB-INF/applicationContext.xml
+            classpath:mybeans.xml
+        </param-value>
+    </context-param>
+
+	<!-- 下面是 POST 中文乱码解决方案 -->
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

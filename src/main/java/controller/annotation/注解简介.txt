@@ -1,5 +1,6 @@
 
-Spring2.5 引入注解式处理器支持，通过@Controller 和 @RequestMapping 注解定义处理器类，并且提供了一组强大的注解：
+Spring2.5 引入注解式处理器支持，通过 @Controller 和 @RequestMapping 注解定义处理器类，并且提供了一组强大的注解：
+
 @Controller：用于标识是处理器类；
 @RequestMapping：请求到处理器功能方法的映射规则；
 @RequestParam：请求参数到处理器功能处理方法的方法参数上的绑定；
@@ -10,6 +11,7 @@ Spring2.5 引入注解式处理器支持，通过@Controller 和 @RequestMapping
 
 
 Spring3.0 引入 RESTful 架构风格支持(通过@PathVariable 注解和一些其他特性支持),且又引入了更多的注解支持：
+
 @CookieValue：cookie 数据到处理器功能处理方法的方法参数上的绑定；
 @RequestHeader：请求头（header）数据到处理器功能处理方法的方法参数上的绑定；
 @RequestBody：请求的 body 体的绑定（通过 HttpMessageConverter 进行类型转换） ；
