@@ -52,9 +52,11 @@
 <p>
     <a href="user?query=abcd">/user?query=aaa</a>
 <p>
-    <a href="user/delete/pk123456">/user/delete/111</a>
+    <a href="user/delete/pk123456">/user/delete/pk123456</a>
 <p>
     <a href="user/add">/user/add</a>
+<p>
+    <a href="user/upload">/user/upload</a>
 <p>
     </fieldset>
     <fieldset>
