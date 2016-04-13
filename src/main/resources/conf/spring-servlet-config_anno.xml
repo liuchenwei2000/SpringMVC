@@ -15,6 +15,7 @@
 	<!-- 默认扫描的包路径，使用注解的 Controller 类将被自动发现并注册为 Bean -->  
     <context:component-scan base-package="controller.annotation" />
 	<context:component-scan base-package="rest" />
+	<context:component-scan base-package="service" />
 	<!--
     配置对静态资源的请求的处理：<mvc:resources> 建立了一个服务于静态资源的处理器。
     属性 mapping 被设置为 /resources/**，它包含了 Ant 风格的通配符以表明路径必须以 /resources 开始，而且也包含它的任意子路径。

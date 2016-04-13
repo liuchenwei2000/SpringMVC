@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * 创建日期：2015年5月19日
  */
 @Controller 
-@RequestMapping("/book") 
+@RequestMapping("/books")
 public class BookController {
 
 	// {id} 是一个占位符，通过它会将变量数据传递给方法，对应了方法参数 id 的 @PathVariable 注解

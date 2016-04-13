@@ -3,6 +3,8 @@
  */
 package vo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * User
  *
@@ -10,6 +12,8 @@ package vo;
  * 
  * 创建日期：2015年10月30日
  */
+// 支持序列为 XML 文本
+@XmlRootElement
 public class User {
 
 	private String id;

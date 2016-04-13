@@ -7,39 +7,15 @@
         String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
     %>
     <base href="<%=basePath%>"/>
-    <title>Spring MVC demo.</title>
-    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-    <script type="text/javascript">
-
-        function postJson() {
-            $.ajax({
-                cache: true,
-                type: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                url: "api/user/add",
-                data: JSON.stringify({
-                    "code": "code0001",
-                    "name": "name0001"
-                }),
-                async: false,
-                error: function (request) {
-                    alert(request.status);
-                },
-                success: function (data) {
-                    alert(data);
-                }
-            });
-        }
-    </script>
+    <title>Spring MVC demo</title>
 </head>
 <body>
 <img src="resources/image/cross.jpg">
 <a href="hello">/hello</a>
 <a href="today">/today</a>
 <a href="restful">/restful</a>
-<a href="api/users">/api/users</a>
-<a href="javascript:postJson()">/api/user/add</a>
+<a href="api">/api</a>
+
 <p>
     <fieldset>
         <legend>UserController</legend>

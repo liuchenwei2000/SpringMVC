@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$.ajax({
 			cache : true,
 			type : type,
-			url : "book",
+			url : "books",
 			data : {
 				"name" : "Hello World"
 			},
@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$.ajax({
 			cache : true,
 			type : "DELETE",
-			url : "book/A123456789",
+			url : "books/A123456789",
 			async : false,
 			error : function(request) {
 				alert("Connection error");
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 	<p>
-		<a href="book/123456">/book GET</a>
+		<a href="books/123456">/book GET</a>
 	<p>
 		<a href="javascript:testPostOrPut('POST')">/book POST</a>
 	<p>
