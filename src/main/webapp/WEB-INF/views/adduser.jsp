@@ -3,15 +3,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Show Info</title>
+    <title>add User</title>
 </head>
 <body>
-${a}
-<p>
-    ${b}
-<p>
-    ${c}
-<p>
-    <a href="${baseurl}">Home Page</a>
+
+<form action="${baseurl}/user/save" method="POST">
+    User Code:<input type="text" name="code"/>
+    <p>
+       User Name:<input type="text" name="name"/>
+    <p>
+        <input type="submit" value="Save"/>
+</form>
+
+<a href="${baseurl}">Home Page</a>
 </body>
 </html>

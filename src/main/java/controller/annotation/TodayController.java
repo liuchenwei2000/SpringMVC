@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  * 创建日期：2015年5月19日
  */
 @Controller 
-// 或 @RequestMapping 将一个POJO类声明为 Controller  
+// 或 @RequestMapping 将一个 POJO 类声明为 Controller
 // 推荐使用 @Controller 声明处理器，它和 @Service、@Repository 很好的对应了常见的三层开发架构的组件
 public class TodayController {
 	
