@@ -13,13 +13,15 @@
     http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	
 	<!-- 默认扫描的包路径，使用注解的 Controller 类将被自动发现并注册为 Bean -->  
-    <context:component-scan base-package="controller.annotation" /> 
-    <!--  
-          配置对静态资源的请求的处理：<mvc:resources> 建立了一个服务于静态资源的处理器。
-          属性 mapping 被设置为 /resources/**，它包含了 Ant 风格的通配符以表明路径必须以 /resources 开始，而且也包含它的任意子路径。
-          属性 location 表明了要提供服务的文件位置。
-          上述配置表明，所有以 /resources 路径开头的请求都会自动由应用程序根目录下的 /resources 目录提供服务。
-          因此，所有图片、样式表、JavaScript以及其他的静态资源都必须放在应用程序的 /resources 目录下，如下：
+    <context:component-scan base-package="controller.annotation" />
+	<context:component-scan base-package="rest" />
+	<!--
+    配置对静态资源的请求的处理：<mvc:resources> 建立了一个服务于静态资源的处理器。
+    属性 mapping 被设置为 /resources/**，它包含了 Ant 风格的通配符以表明路径必须以 /resources 开始，而且也包含它的任意子路径。
+    属性 location 表明了要提供服务的文件位置。
+    上述配置表明，所有以 /resources 路径开头的请求都会自动由应用程序根目录下的 /resources 目录提供服务。
+    因此，所有图片、样式表、JavaScript以及其他的静态资源都必须放在应用程序的 /resources 目录下，如下：
+
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/img/**" location="/img/"/>
     -->

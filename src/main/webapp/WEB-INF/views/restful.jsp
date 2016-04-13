@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 	<p>
-		<a href="book">/book GET</a>
+		<a href="book/123456">/book GET</a>
 	<p>
 		<a href="javascript:testPostOrPut('POST')">/book POST</a>
 	<p>
