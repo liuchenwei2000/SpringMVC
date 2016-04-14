@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import vo.Book;
 import vo.User;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,6 +116,46 @@ public class JsonController {
     @ResponseBody
     public Book addBook(@RequestBody Book book) {
         book.setId("id000X");
+        return book;
+    }
+
+    /**
+     * 使用 PUT 更新资源
+     */
+    @RequestMapping(value = "/book", method = RequestMethod.PUT)
+    @ResponseBody
+    public void updateBook(@RequestBody Book book) {
+        System.out.println(book.getName() + " has been updated.");
+    }
+
+    /**
+     * 使用 DELETE 删除资源
+     */
+    @RequestMapping(value = "/book/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteBook(@PathVariable String id) {
+        System.out.println("Book " + id + " has been deleted.");
+    }
+
+    /**
+     * 使用 POST 创建资源
+     */
+    @RequestMapping(value = "/bookv2", method = RequestMethod.POST)
+    @ResponseBody
+    public Book addBook2(@RequestBody Book book) {
+        book.setId("id000X");
+        return book;
+    }
+
+    /**
+     * 使用 POST 创建资源
+     */
+    @RequestMapping(value = "/bookv3", method = RequestMethod.POST)
+    @ResponseBody
+    public Book addBook3(@RequestBody Book book, HttpServletResponse response) {
+        book.setId("id000X");
+        // 设置 Location 头信息来包含资源的 URL
+        response.setHeader("Location", "/api/book/" + book.getId());
         return book;
     }
 }

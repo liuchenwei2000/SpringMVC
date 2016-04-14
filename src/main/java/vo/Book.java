@@ -19,6 +19,13 @@ public class Book {
 	private String id;
 	private String name;
 
+	public Book() {
+	}
+
+	public Book(String name) {
+		this.name = name;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -33,5 +40,13 @@ public class Book {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Book{" +
+				"id='" + id + '\'' +
+				", name='" + name + '\'' +
+				'}';
 	}
 }

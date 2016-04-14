@@ -38,6 +38,6 @@
 <p>
 	<a href="api/users">/api/users</a>
 <p>
-	<a href="javascript:postJSON()">/api/book</a>
+	<a href="javascript:postJSON()">/api/book POST</a>
 </body>
 </html>
