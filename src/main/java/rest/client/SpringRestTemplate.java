@@ -1,7 +1,11 @@
 package rest.client;
 
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import vo.Book;
 
@@ -149,6 +153,31 @@ public class SpringRestTemplate {
     public void deleteBookById(String id) {
         String url = "http://localhost:8080/SpringMVC/api/book/{id}";
         new RestTemplate().delete(url, id);
+    }
+
+    /**
+     * exchange() 方法可以在发送给服务端的请求中设置头信息。
+     */
+    public void retrieveBookById3(String id) {
+        String url = "http://localhost:8080/SpringMVC/api/book/{id}";
+        // 第二个参数表明要使用的 HTTP 动作，根据这个参数值，exchange() 能够执行与 RestTemplate 其他方法一样的工作。
+        // 第三个参数是在请求中发送的资源和头信息，GET 请求不需要，POST、GET 请求则需要该参数值。
+        // 第四个参数是预期返回的 Java 类型，第五个参数指定了 URL 变量（可变参数列表或 Map）。
+        new RestTemplate().exchange(url, HttpMethod.GET, null, Book.class, id);
+    }
+
+    public void retrieveBookById4(String id) {
+        String url = "http://localhost:8080/SpringMVC/api/book/{id}";
+        // 如果不指名头信息，exchange() 执行 GET 请求默认带有一份头信息，比如：
+        // Accept:applicsation/xml, text/xml, application/json
+        // 这就为服务器留有余地来决定采用哪种格式返回资源，如果只希望接收 JSON 格式资源的话，
+        // 需要指明 application/json 是 Accept 头信息的唯一值。可以通过下面的方式：
+        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+        headers.add("Accept", "application/json");
+        HttpEntity<Object> requestEntity = new HttpEntity<>(headers);
+        // 如果这是一个 PUT 或 POST 请求，则需要为 HttpEntity 设置在请求体中发送的对象，对 GET 请求则没有必要。
+//        HttpEntity<Object> requestEntity = new HttpEntity<>(book, headers);
+        new RestTemplate().exchange(url, HttpMethod.GET, requestEntity, Book.class, id);
     }
 
     public static void main(String[] args) {
