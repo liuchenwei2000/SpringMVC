@@ -39,6 +39,14 @@
 			<mvc:exclude-mapping path="/js/**" />
 			<bean class="interceptor.BaseUrlInterceptor" />
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/" />
+			<mvc:exclude-mapping path="/js/**" />
+			<mvc:exclude-mapping path="/css/**" />
+			<mvc:exclude-mapping path="/images/**" />
+			<bean class="interceptor.TimeCostInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 	<!-- InternalResourceViewResolver：用于支持Servlet、JSP视图解析。	-->
